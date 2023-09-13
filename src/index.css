@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply bg-main-off-white;
+  }
+  .drawing{
+    @apply h-8 border w-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg border-white;
+  }
+  .text-warning, label.text-warning{
+    @apply text-main-light-red;
+  }
+  .border-warning{
+    @apply border-main-light-red;
+  }
+}
+
+.drawing::after{
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 2px solid transparent;
+  border-right: 2px solid white;
+  transform: rotate(-60deg);
+  top: 16px;
+  right: -1.4px;
+  border-radius: 50%;
+}
+
+.drawing::before{
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 2px solid transparent;
+  border-left: 2px solid white;
+  transform: rotate(60deg);
+  top: 16px;
+  left: -1.4px;
+  border-radius: 50%;
+}
+
